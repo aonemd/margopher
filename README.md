@@ -26,3 +26,6 @@ fmt.Println(margopher.Generate(sentenceLength))
 
 - [ ] Remove 'Simple' from the description and add more features
 
+## License
+
+See [LICENSE](https://github.com/AhmedZaleh/margopher/blob/master/LICENSE).
