@@ -41,7 +41,7 @@ func (m *margopher) extractKeys() []string {
 	return keys
 }
 
-// Generate a random element from a string array
+// Return a random element from a given string slice
 func getRandomWord(slice []string) string {
 	if !(cap(slice) == 0) {
 		return slice[rand.Intn(len(slice))]
@@ -50,13 +50,13 @@ func getRandomWord(slice []string) string {
 	}
 }
 
-// Confirm that a string ends in '.'
+// Confirm that a string word ends in '.'
 func isTerminalWord(word string) bool {
 	match, _ := regexp.MatchString("(\\.)$", word)
 	return match
 }
 
-// Generate margopher senetence based on given length
+// Generate margopher senetence based on a given length
 func (m *margopher) Generate(sentenceLength int) string {
 	// Get all prefixes from states maps
 	keys := m.extractKeys()
@@ -71,7 +71,7 @@ func (m *margopher) Generate(sentenceLength int) string {
 		suffix := getRandomWord(m.states[prefix])
 		sentence.WriteString(suffix + " ")
 
-		// Break the loop if the suffix ends in "." and senetenceLength is enough
+		// Break the loop if suffix ends in "." and senetenceLength is enough
 		if isTerminalWord(suffix) && i > sentenceLength {
 			break
 		}
