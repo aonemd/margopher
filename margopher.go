@@ -19,8 +19,8 @@ func NewMargopher() *margopher {
 	return &margopher{states: make(map[string][]string)}
 }
 
-// Parse input text into states map
-func (m *margopher) ParseText(text string) {
+// Read input text into states map
+func (m *margopher) ReadText(text string) {
 	words := strings.Split(text, " ")
 
 	for i := 0; i < len(words)-1; i++ {
@@ -34,7 +34,7 @@ func (m *margopher) ParseText(text string) {
 	}
 }
 
-// Read text from file and send it to ParseText
+// Read text from file and send it to ReadText
 func (m *margopher) ReadFile(filePath string) {
 	// Open the file
 	file, err := os.Open(filePath)
@@ -48,8 +48,8 @@ func (m *margopher) ReadFile(filePath string) {
 		log.Fatal(err)
 	}
 
-	// Call ParseText with the text
-	m.ParseText(string(text))
+	// Call ReadText with the text
+	m.ReadText(string(text))
 }
 
 // Extract keys from states map
