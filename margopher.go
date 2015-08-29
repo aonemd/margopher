@@ -2,7 +2,10 @@ package margopher
 
 import (
 	"bytes"
+	"io/ioutil"
+	"log"
 	"math/rand"
+	"os"
 	"regexp"
 	"strings"
 )
@@ -29,6 +32,24 @@ func (m *margopher) ParseText(text string) {
 			m.states[words[i]] = slice
 		}
 	}
+}
+
+// Read text from file and send it to ParseText
+func (m *margopher) ReadFile(filePath string) {
+	// Open the file
+	file, err := os.Open(filePath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Read data from the file
+	text, err := ioutil.ReadAll(file)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Call ParseText with the text
+	m.ParseText(string(text))
 }
 
 // Extract keys from states map
