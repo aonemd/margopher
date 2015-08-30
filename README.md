@@ -13,45 +13,45 @@ go get github.com/AhmedZaleh/margopher
 
 1. Import the package
 
-```
-import "github.com/AhmedZaleh/margopher"
-```
+  ```
+  import "github.com/AhmedZaleh/margopher"
+  ```
 
 2. Create new margopher object
 
-```
-margopher := margopher.NewMargopher()
-```
+  ```
+  margopher := margopher.NewMargopher()
+  ```
 
 3. Read input text using one of three parsing methods:
 
-- ReadText(text string)
+  - ReadText(text string)
 
-```
-text := "I love cats. Cats love pizza"
-margopher.ReadText(text)
-```
+  ```
+  text := "I love cats. Cats love pizza"
+  margopher.ReadText(text)
+  ```
 
-- ReadFile(filePath string)
+  - ReadFile(filePath string)
 
-```
-filePath := "../file.txt"
-margopher.ReadFile(filePath)
-```
+  ```
+  filePath := "../file.txt"
+  margopher.ReadFile(filePath)
+  ```
 
-- ReadURL(url string)
+  - ReadURL(url string)
 
-```
-url := "https://github.com/AhmedZaleh/margopher"
-margopher.ReadURL(url)
-```
+  ```
+  url := "https://github.com/AhmedZaleh/margopher"
+  margopher.ReadURL(url)
+  ```
 
 4. Print the sentence
 
-```
-sentenceLength := 3   //specify number of words
-fmt.Println(margopher.Generate(sentenceLength))
-```
+  ```
+  sentenceLength := 3   //specify number of words
+  fmt.Println(margopher.Generate(sentenceLength))
+  ```
 
 ## License
 
