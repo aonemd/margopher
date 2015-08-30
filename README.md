@@ -1,7 +1,7 @@
 MarGopher
 ---
 
-Simple [Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator in Go
+[Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator in Go
 
 ## Installation
 
@@ -11,20 +11,47 @@ go get github.com/AhmedZaleh/margopher
 
 ## Usage
 
+1. Import the package
+
 ```
 import "github.com/AhmedZaleh/margopher"
-
-text := "I love cats. Cats love pizza"
-sentenceLength := 6
-
-margopher := margopher.NewMargopher()
-margopher.ParseText(text)
-fmt.Println(margopher.Generate(sentenceLength))
 ```
 
-## TODO
+2. Create new margopher object
 
-- [ ] Remove 'Simple' from the description and add more features
+```
+margopher := margopher.NewMargopher()
+```
+
+3. Read input text using one of three parsing methods:
+
+- ReadText(text string)
+
+```
+text := "I love cats. Cats love pizza"
+margopher.ReadText(text)
+```
+
+- ReadFile(filePath string)
+
+```
+filePath := "../file.txt"
+margopher.ReadFile(filePath)
+```
+
+- ReadURL(url string)
+
+```
+url := "https://github.com/AhmedZaleh/margopher"
+margopher.ReadURL(url)
+```
+
+4. Print the sentence
+
+```
+sentenceLength := 3   //specify number of words
+fmt.Println(margopher.Generate(sentenceLength))
+```
 
 ## License
 
