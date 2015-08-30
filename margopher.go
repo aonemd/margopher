@@ -2,8 +2,6 @@ package margopher
 
 import (
 	"bytes"
-	"math/rand"
-	"regexp"
 )
 
 type margopher struct {
@@ -23,21 +21,6 @@ func (m *margopher) extractKeys() []string {
 	}
 
 	return keys
-}
-
-// Return a random element from a given string slice
-func getRandomWord(slice []string) string {
-	if !(cap(slice) == 0) {
-		return slice[rand.Intn(len(slice))]
-	} else {
-		return ""
-	}
-}
-
-// Confirm that a string word ends in '.'
-func isTerminalWord(word string) bool {
-	match, _ := regexp.MatchString("(\\.)$", word)
-	return match
 }
 
 // Generate margopher senetence based on a given length
