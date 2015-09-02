@@ -2,37 +2,39 @@ package margopher
 
 import (
 	"bytes"
+	"strings"
 )
 
 type margopher struct {
-	states map[string][]string
+	states map[[2]string][]string
 }
 
 // Margopher constructor
 func NewMargopher() *margopher {
-	return &margopher{states: make(map[string][]string)}
+	return &margopher{states: make(map[[2]string][]string)}
 }
 
-// Extract keys from states map
-func (m *margopher) extractKeys() []string {
-	keys := make([]string, 0, len(m.states))
-	for k := range m.states {
-		keys = append(keys, k)
+// Return a random prefix other than the one in the arguments
+func (m *margopher) getRandomPrefix(prefix [2]string) [2]string {
+	// By default, Go orders keys randomly for maps
+	for key := range m.states {
+		if key != prefix {
+			prefix = key
+			break
+		}
 	}
 
-	return keys
+	return prefix
 }
 
 // Generate margopher senetence based on a given length
 func (m *margopher) Generate(sentenceLength int) string {
-	// Get all prefixes from states maps
-	keys := m.extractKeys()
 
 	var sentence bytes.Buffer
 
 	// Initialize prefix with a random key
-	prefix := getRandomWord(keys)
-	sentence.WriteString(prefix + " ")
+	prefix := m.getRandomPrefix([2]string{"", ""})
+	sentence.WriteString(strings.Join(prefix[:], " ") + " ")
 
 	for i := 1; i < sentenceLength; i++ {
 		suffix := getRandomWord(m.states[prefix])
@@ -43,7 +45,7 @@ func (m *margopher) Generate(sentenceLength int) string {
 			break
 		}
 
-		prefix = suffix
+		prefix = [2]string{prefix[1], suffix}
 	}
 
 	return sentence.String()
