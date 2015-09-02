@@ -10,7 +10,7 @@ type margopher struct {
 }
 
 // Margopher constructor
-func NewMargopher() *margopher {
+func New() *margopher {
 	return &margopher{states: make(map[[2]string][]string)}
 }
 
