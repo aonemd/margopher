@@ -3,6 +3,14 @@ MarGopher
 
 [Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator in Go
 
+## How it Works
+
+It's based on Markov chain statistical model, except that it starts by choosing a random prefix to 
+ensure more randomness in the genereated sentence.
+
+The generator will keep generating words till it encounters a terminal word (a 
+word that ends in '.')
+
 ## Installation
 
 ```
@@ -20,7 +28,7 @@ go get github.com/AhmedZaleh/margopher
 2. Create new margopher object
 
   ```
-  margopher := margopher.NewMargopher()
+  margopher := margopher.New()
   ```
 
 3. Read input text using one of three parsing methods:
@@ -28,7 +36,7 @@ go get github.com/AhmedZaleh/margopher
   - ReadText(text string)
 
   ```
-  text := "I love cats. Cats love pizza"
+  text := "I love cats. Cats love pizza."
   margopher.ReadText(text)
   ```
 
@@ -49,8 +57,7 @@ go get github.com/AhmedZaleh/margopher
 4. Print the sentence
 
   ```
-  sentenceLength := 3   //specify number of words
-  fmt.Println(margopher.Generate(sentenceLength))
+  fmt.Println(margopher.Generate())
   ```
 
 ## License
