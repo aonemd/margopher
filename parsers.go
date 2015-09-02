@@ -12,13 +12,15 @@ import (
 func (m *margopher) ReadText(text string) {
 	words := strings.Split(text, " ")
 
-	for i := 0; i < len(words)-1; i++ {
-		if _, ok := m.states[words[i]]; ok {
-			m.states[words[i]] = append(m.states[words[i]], words[i+1])
+	for i := 0; i < len(words)-2; i++ {
+		// Initialize prefix with two consecutive words as the key
+		prefix := [2]string{words[i], words[i+1]}
+
+		// Assign the third word as value to the prefix
+		if _, ok := m.states[prefix]; ok {
+			m.states[prefix] = append(m.states[prefix], words[i+2])
 		} else {
-			slice := []string{}
-			slice = append(slice, words[i+1])
-			m.states[words[i]] = slice
+			m.states[prefix] = []string{words[i+2]}
 		}
 	}
 }
