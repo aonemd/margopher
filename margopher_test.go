@@ -15,7 +15,7 @@ func TestIsTerminalWord(t *testing.T) {
 }
 
 func TestReadText(t *testing.T) {
-	m := NewMargopher()
+	m := New()
 	m.ReadText("I love cats. Cats love tuna.")
 
 	if m.states == nil {
