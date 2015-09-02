@@ -15,7 +15,7 @@ func NewMargopher() *margopher {
 }
 
 // Generate margopher senetence based on a given length
-func (m *margopher) Generate(sentenceLength int) string {
+func (m *margopher) Generate() string {
 
 	var sentence bytes.Buffer
 
@@ -23,12 +23,12 @@ func (m *margopher) Generate(sentenceLength int) string {
 	prefix := m.getRandomPrefix([2]string{"", ""})
 	sentence.WriteString(strings.Join(prefix[:], " ") + " ")
 
-	for i := 1; i < sentenceLength; i++ {
+	for {
 		suffix := getRandomWord(m.states[prefix])
 		sentence.WriteString(suffix + " ")
 
 		// Break the loop if suffix ends in "." and senetenceLength is enough
-		if isTerminalWord(suffix) && i > sentenceLength {
+		if isTerminalWord(suffix) {
 			break
 		}
 
