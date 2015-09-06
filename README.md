@@ -28,7 +28,7 @@ go get github.com/AhmedZaleh/margopher
 2. Create new margopher object
 
   ```
-  margopher := margopher.New()
+  m := margopher.New()
   ```
 
 3. Read input text using one of three parsing methods:
@@ -37,27 +37,27 @@ go get github.com/AhmedZaleh/margopher
 
   ```
   text := "I love cats. Cats love pizza."
-  margopher.ReadText(text)
+  m.ReadText(text)
   ```
 
   - ReadFile(filePath string)
 
   ```
   filePath := "../file.txt"
-  margopher.ReadFile(filePath)
+  m.ReadFile(filePath)
   ```
 
   - ReadURL(url string)
 
   ```
   url := "https://github.com/AhmedZaleh/margopher"
-  margopher.ReadURL(url)
+  m.ReadURL(url)
   ```
 
 4. Print the sentence
 
   ```
-  fmt.Println(margopher.Generate())
+  fmt.Println(m.Generate())
   ```
 
 ## API
@@ -67,10 +67,10 @@ To use the API, add the following:
   ```
   func main() {
     // Create New margopher
-    mar := margopher.New()
+    m := margopher.New()
     
     // Call the Api() function
-    mar.Api()
+    m.Api()
   }
   ```
 
