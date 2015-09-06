@@ -60,6 +60,32 @@ go get github.com/AhmedZaleh/margopher
   fmt.Println(margopher.Generate())
   ```
 
+## API
+
+To use the API, add the following:
+
+  ```
+  func main() {
+    // Create New margopher
+    mar := margopher.New()
+    
+    // Call the Api() function
+    mar.Api()
+  }
+  ```
+
+Then send POST reqeusts to ```http://localhost:7878/``` using one of these paths:
+
+  - /readtext
+  - /readfile
+  - /readurl
+
+Example
+  
+  ```
+  $ curl -d '"We eat sushi. They eat pasta."' http://localhost:7878/readtext
+  ```
+
 ## License
 
 See [LICENSE](https://github.com/AhmedZaleh/margopher/blob/master/LICENSE).
