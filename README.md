@@ -1,27 +1,27 @@
 MarGopher
 ---
 
-[Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator in Go
+[Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator
 
 ## How it Works
 
 **TL;DR** You give it some text, it gives you a random (and sane) chunk out of this text.
 
-Basically, MarGopher is based on Markov chain statistical model, except that it starts by choosing 
-a random prefix from the states map to ensure more randomness in the genereated 
-sentence.
+Basically, MarGopher is based on Markov chain statistical model, except that it 
+starts by choosing a random prefix from the states dictionary to ensure more 
+randomness.
 
-It starts by parsing the input text and putting it into states dictionary. Then 
+It starts by parsing the input text and putting it into states dictionary then 
 starts generating the output sentence.
 
 The generator will keep generating words till it encounters a terminal word (a 
 word that ends in '.')
 
-States is a map contains prefix as keys and suffix as values
+**States** is a map contains prefix as keys and suffix as values
 
-A prefix is an array of two consecutive words from the original text.
+**Prefix** is an array of two consecutive words from the original text.
 
-A suffix is a slice of all the words that occur after a given prefix.
+**Suffix** is a slice of all the words that occur after a given prefix.
 
 
 ## Installation
