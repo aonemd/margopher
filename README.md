@@ -7,7 +7,7 @@ MarGopher
 
 **TL;DR** You give it some text, it gives you a random (and sane) chunk out of this text.
 
-Basically, MarGopher is based on Markov chain statistical model, except that it 
+Basically MarGopher is based on Markov chain statistical model, except that it 
 starts by choosing a random prefix from the states dictionary to ensure more 
 randomness.
 
@@ -17,7 +17,7 @@ starts generating the output sentence.
 The generator will keep generating words till it encounters a terminal word (a 
 word that ends in '.')
 
-**States** is a map contains prefix as keys and suffix as values
+**States** is a map contains prefix as keys and suffix as values.
 
 **Prefix** is an array of two consecutive words from the original text.
 
