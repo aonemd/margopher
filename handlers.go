@@ -2,7 +2,6 @@ package margopher
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -24,7 +23,14 @@ func (m *margopher) readFromText(w http.ResponseWriter, r *http.Request) {
 	inputText := parameters.(string)
 	m.ReadText(inputText)
 
-	fmt.Fprintln(w, m.Generate())
+	outputSentence := m.Generate()
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(outputSentence); err != nil {
+		panic(err)
+	}
 }
 
 func (m *margopher) readFromFile(w http.ResponseWriter, r *http.Request) {
@@ -44,7 +50,14 @@ func (m *margopher) readFromFile(w http.ResponseWriter, r *http.Request) {
 	inputText := parameters.(string)
 	m.ReadFile(inputText)
 
-	fmt.Fprintln(w, m.Generate())
+	outputSentence := m.Generate()
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(outputSentence); err != nil {
+		panic(err)
+	}
 }
 
 func (m *margopher) readFromURL(w http.ResponseWriter, r *http.Request) {
@@ -64,5 +77,12 @@ func (m *margopher) readFromURL(w http.ResponseWriter, r *http.Request) {
 	inputText := parameters.(string)
 	m.ReadURL(inputText)
 
-	fmt.Fprintln(w, m.Generate())
+	outputSentence := m.Generate()
+
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(outputSentence); err != nil {
+		panic(err)
+	}
 }
