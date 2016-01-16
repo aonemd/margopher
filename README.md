@@ -26,58 +26,58 @@ word that ends in '.')
 
 ## Installation
 
-`
+```sh
 go get github.com/aasare/margopher
-`
+```
 
 ## Usage
 
 1. Import the package
 
-  `
+  ```go
   import "github.com/aasare/margopher"
-  `
+  ```
 
 2. Create new margopher object
 
-  `
+  ```go
   m := margopher.New()
-  `
+  ```
 
 3. Read input text using one of three parsing methods:
 
   - ReadText(text string)
 
-  `
+  ```go
   text := "I love cats. Cats love pizza."
   m.ReadText(text)
-  `
+  ```
 
   - ReadFile(filePath string)
 
-  `
+  ```go
   filePath := "../file.txt"
   m.ReadFile(filePath)
-  `
+  ```
 
   - ReadURL(url string)
 
-  `
+  ```go
   url := "https://github.com/AhmedZaleh/margopher"
   m.ReadURL(url)
-  `
+  ```
 
 4. Print the sentence
 
-  `
+  ```go
   fmt.Println(m.Generate())
-  `
+  ```
 
 ## API
 
 To use the API, add the following:
 
-  `
+  ```go
   func main() {
     // Create New margopher
     m := margopher.New()
@@ -85,7 +85,7 @@ To use the API, add the following:
     // Call the Api() function
     m.Api()
   }
-  `
+  ```
 
 Then send POST reqeusts to `http://localhost:7878/` using one of these paths:
 
@@ -95,9 +95,9 @@ Then send POST reqeusts to `http://localhost:7878/` using one of these paths:
 
 Example
 
-  `
+  ```sh
   $ curl -d '"We eat sushi. They eat pasta."' http://localhost:7878/readtext
-  `
+  ```
 
 ## Feedback
 
