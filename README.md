@@ -67,6 +67,15 @@ go get github.com/aasare/margopher
   fmt.Println(m.ReadURL(url))
   ```
 
+4. You can see the input parsed into a dictionary of States using `ReadDictionary()`:
+
+  - It returns a dicitonary of this signature `map[[2]string][]string`.
+  - The words are unordered because Go maps do not keep order.
+
+  ```go
+  fmt.Println(m.ReadDictionary())
+  ```
+
 ## REST API
 
 To use the API, add the following:
