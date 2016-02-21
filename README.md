@@ -50,30 +50,24 @@ go get github.com/aasare/margopher
 
   ```go
   text := "I love cats. Cats love pizza."
-  m.ReadText(text)
+  fmt.Println(m.ReadText(text))
   ```
 
   - ReadFile(filePath string)
 
   ```go
   filePath := "../file.txt"
-  m.ReadFile(filePath)
+  fmt.Println(m.ReadFile(filePath))
   ```
 
   - ReadURL(url string)
 
   ```go
   url := "https://github.com/AhmedZaleh/margopher"
-  m.ReadURL(url)
+  fmt.Println(m.ReadURL(url))
   ```
 
-4. Print the sentence
-
-  ```go
-  fmt.Println(m.Generate())
-  ```
-
-## API
+## REST API
 
 To use the API, add the following:
 
@@ -102,9 +96,7 @@ Example
 ## Feedback
 
 I wrote this simple project particularly to learn Go so any feedback is more
-than welcome. Also, I'm currently investigating if there's a way to run the
-program concurrently, if you think it's possible please tell me or open an
-issue/send pull request.
+than welcome. If you have any, please open an issue or send a pull request.
 
 ## License
 
