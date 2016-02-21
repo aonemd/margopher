@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-// Read input text into states map
-func (m *margopher) ReadText(text string) {
+// Parse input text into states map
+func (m *margopher) ParseText(text string) {
 	words := strings.Split(text, " ")
 
 	for i := 0; i < len(words)-2; i++ {
@@ -25,8 +25,8 @@ func (m *margopher) ReadText(text string) {
 	}
 }
 
-// Read text from file and send it to ReadText
-func (m *margopher) ReadFile(filePath string) {
+// Parse text from file and send it to ParseText
+func (m *margopher) ParseFile(filePath string) {
 	// Open the file
 	file, err := os.Open(filePath)
 	if err != nil {
@@ -39,12 +39,12 @@ func (m *margopher) ReadFile(filePath string) {
 		log.Fatal(err)
 	}
 
-	// Call ReadText with the text
-	m.ReadText(string(text))
+	// Call ParseText with the text
+	m.ParseText(string(text))
 }
 
-// Read text from URL and send it to ReadText
-func (m *margopher) ReadURL(URL string) {
+// Parse text from URL and send it to ParseText
+func (m *margopher) ParseURL(URL string) {
 	// Open web page
 	doc, err := goquery.NewDocument(URL)
 	if err != nil {
@@ -54,7 +54,7 @@ func (m *margopher) ReadURL(URL string) {
 	// Search for <p></p> under <article></article> tags
 	doc.Find("article").Each(func(i int, s *goquery.Selection) {
 		text := s.Find("p").Text()
-		// Call ReadText with the text
-		m.ReadText(text)
+		// Call ParseText with the text
+		m.ParseText(text)
 	})
 }
