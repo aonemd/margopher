@@ -21,9 +21,8 @@ func (m *margopher) readFromText(w http.ResponseWriter, r *http.Request) {
 	}
 
 	inputText := parameters.(string)
-	m.ReadText(inputText)
 
-	outputSentence := m.Generate()
+	outputSentence := m.ReadText(inputText)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
@@ -48,9 +47,8 @@ func (m *margopher) readFromFile(w http.ResponseWriter, r *http.Request) {
 	}
 
 	inputText := parameters.(string)
-	m.ReadFile(inputText)
 
-	outputSentence := m.Generate()
+	outputSentence := m.ReadFile(inputText)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
@@ -75,9 +73,8 @@ func (m *margopher) readFromURL(w http.ResponseWriter, r *http.Request) {
 	}
 
 	inputText := parameters.(string)
-	m.ReadURL(inputText)
 
-	outputSentence := m.Generate()
+	outputSentence := m.ReadURL(inputText)
 
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
