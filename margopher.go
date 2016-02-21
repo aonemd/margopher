@@ -56,3 +56,7 @@ func (m *margopher) ReadURL(URL string) string {
 
 	return m.Generate()
 }
+
+func (m *margopher) ReadDictionary() map[[2]string][]string {
+	return m.states
+}
