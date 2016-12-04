@@ -38,6 +38,6 @@ func (m *margopher) Generate() string {
 	return sentence.String()
 }
 
-func (m *margopher) StatesDictionary() map[[2]string][]string {
+func (m *margopher) StateDictionary() map[[2]string][]string {
 	return m.states
 }
