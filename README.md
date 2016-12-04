@@ -76,32 +76,6 @@ go get github.com/aaooki/margopher
   fmt.Println(m.ReadDictionary())
   ```
 
-## REST API
-
-To use the API, add the following:
-
-  ```go
-  func main() {
-    // Create New margopher
-    m := margopher.New()
-
-    // Call the Api() function
-    m.Api()
-  }
-  ```
-
-Then send POST reqeusts to `http://localhost:7878/` using one of these paths:
-
-  - /readtext
-  - /readfile
-  - /readurl
-
-Example
-
-  ```sh
-  $ curl -d '"We eat sushi. They eat pasta."' http://localhost:7878/readtext
-  ```
-
 ## Feedback
 
 I wrote this simple project particularly to learn Go so any feedback is more
