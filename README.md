@@ -27,7 +27,7 @@ word that ends in '.')
 ## Installation
 
 ```sh
-go get github.com/aasare/margopher
+go get github.com/aaooki/margopher
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ go get github.com/aasare/margopher
 1. Import the package
 
   ```go
-  import "github.com/aasare/margopher"
+  import "github.com/aaooki/margopher"
   ```
 
 2. Create new margopher object
@@ -63,7 +63,7 @@ go get github.com/aasare/margopher
   - ReadURL(url string)
 
   ```go
-  url := "https://github.com/AhmedZaleh/margopher"
+  url := "https://github.com/aaooki/margopher"
   fmt.Println(m.ReadURL(url))
   ```
 
@@ -109,4 +109,4 @@ than welcome. If you have any, please open an issue or send a pull request.
 
 ## License
 
-See [LICENSE](https://github.com/AhmedZaleh/margopher/blob/master/LICENSE).
+See [LICENSE](https://github.com/aaooki/margopher/blob/master/LICENSE).
