@@ -9,7 +9,6 @@ type margopher struct {
 	states map[[2]string][]string
 }
 
-// Margopher constructor
 func New() *margopher {
 	return &margopher{}
 }
