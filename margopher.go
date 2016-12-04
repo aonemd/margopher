@@ -38,25 +38,6 @@ func (m *margopher) Generate() string {
 	return sentence.String()
 }
 
-// Readers
-func (m *margopher) ReadText(text string) string {
-	m.ParseText(text)
-
-	return m.Generate()
-}
-
-func (m *margopher) ReadFile(filePath string) string {
-	m.ParseFile(filePath)
-
-	return m.Generate()
-}
-
-func (m *margopher) ReadURL(URL string) string {
-	m.ParseURL(URL)
-
-	return m.Generate()
-}
-
-func (m *margopher) ReadDictionary() map[[2]string][]string {
+func (m *margopher) StatesDictionary() map[[2]string][]string {
 	return m.states
 }
