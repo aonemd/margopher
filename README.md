@@ -67,13 +67,13 @@ go get github.com/aaooki/margopher
   fmt.Println(m.ReadURL(url))
   ```
 
-4. You can see the input parsed into a dictionary of States using `margopher.StatesDictionary()`:
+4. You can see the input parsed into a dictionary of States using `margopher.StateDictionary()`:
 
   - It returns a dicitonary of this signature `map[[2]string][]string`.
   - The words are unordered because Go maps do not keep order.
 
   ```go
-  fmt.Println(m.StatesDictionary())
+  fmt.Println(m.StateDictionary())
   ```
 
 ## Feedback
