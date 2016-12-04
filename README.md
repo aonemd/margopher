@@ -1,4 +1,4 @@
-MarGopher
+margopher
 ---
 
 [Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator
@@ -7,7 +7,7 @@ MarGopher
 
 **TL;DR** You give it some text, it gives you a random (and sane) chunk out of this text.
 
-Basically MarGopher is based on Markov chain statistical model, except that it
+Basically margopher is based on Markov chain statistical model, except that it
 starts by choosing a random prefix from the states dictionary to ensure more
 randomness.
 
