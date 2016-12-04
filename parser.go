@@ -4,6 +4,9 @@ import "strings"
 
 // Parse input text into states map
 func (m *margopher) parse(text string) {
+	// Initialize margopher.states map
+	m.states = make(map[[2]string][]string)
+
 	words := strings.Split(text, " ")
 
 	for i := 0; i < len(words)-2; i++ {

@@ -11,7 +11,7 @@ type margopher struct {
 
 // Margopher constructor
 func New() *margopher {
-	return &margopher{states: make(map[[2]string][]string)}
+	return &margopher{}
 }
 
 // Generate margopher senetence based on a given length
