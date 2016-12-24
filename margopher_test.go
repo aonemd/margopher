@@ -14,9 +14,9 @@ func TestIsTerminalWord(t *testing.T) {
 	}
 }
 
-func TestReadText(t *testing.T) {
+func TestParse(t *testing.T) {
 	m := New()
-	m.ParseText("I love cats. Cats love tuna.")
+	m.parse("I love cats. Cats love tuna.")
 
 	if m.states == nil {
 		t.Error("ParseText: it should initialize states.")
