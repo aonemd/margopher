@@ -5,7 +5,9 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"os"
+	"regexp"
 	"strings"
 )
 
@@ -115,4 +117,18 @@ func (m *margopher) getRandomPrefix(prefix [2]string) [2]string {
 	}
 
 	return prefix
+}
+
+// Return a random element from a given string slice
+func getRandomWord(slice []string) string {
+	if !(cap(slice) == 0) {
+		return slice[rand.Intn(len(slice))]
+	} else {
+		return ""
+	}
+}
+
+func isTerminalWord(word string) bool {
+	match, _ := regexp.MatchString("(\\.|,|:|;|\\?|!)$", word)
+	return match
 }
