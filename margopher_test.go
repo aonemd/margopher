@@ -10,7 +10,27 @@ func TestGetRandomWord(t *testing.T) {
 
 func TestIsTerminalWord(t *testing.T) {
 	if isTerminalWord("Hey.") == false {
-		t.Error("isTerminalWord: it should return true for words ending in period.")
+		t.Error("isTerminalWord: it should return true for words ending in `.`")
+	}
+
+	if isTerminalWord("Hey,") == false {
+		t.Error("isTerminalWord: it should return true for words ending in `,`")
+	}
+
+	if isTerminalWord("Hey:") == false {
+		t.Error("isTerminalWord: it should return true for words ending in `:`")
+	}
+
+	if isTerminalWord("Hey;") == false {
+		t.Error("isTerminalWord: it should return true for words ending in `;`")
+	}
+
+	if isTerminalWord("Hey?") == false {
+		t.Error("isTerminalWord: it should return true for words ending in `?`")
+	}
+
+	if isTerminalWord("Hey!") == false {
+		t.Error("isTerminalWord: it should return true for words ending in `!`")
 	}
 }
 

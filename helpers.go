@@ -29,6 +29,6 @@ func getRandomWord(slice []string) string {
 
 // Confirm that a string word ends in '.'
 func isTerminalWord(word string) bool {
-	match, _ := regexp.MatchString("(\\.)$", word)
+	match, _ := regexp.MatchString("(\\.|,|:|;|\\?|!)$", word)
 	return match
 }
