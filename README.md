@@ -15,7 +15,7 @@ It starts by parsing the input text and putting it into states dictionary then
 starts generating the output sentence.
 
 The generator will keep generating words till it encounters a terminal word (a
-word that ends in '.')
+word that ends in any of `.,:;?!`)
 
 **States** is a map contains prefix as keys and suffix as values.
 
