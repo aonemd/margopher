@@ -49,7 +49,7 @@ go get github.com/aaoiki/margopher
   - ReadText(text string)
 
   ```go
-  text := "I love cats. Cats love pizza."
+  text := "Cats are nice. Cats love pizza, and Cats hates dogs."
   fmt.Println(m.ReadText(text))
   ```
 
