@@ -27,7 +27,7 @@ word that ends in any of `.,:;?!`)
 ## Installation
 
 ```sh
-go get github.com/aaoiki/margopher
+go get github.com/yahmds/margopher
 ```
 
 ## Usage
@@ -35,7 +35,7 @@ go get github.com/aaoiki/margopher
 1. Import the package
 
   ```go
-  import "github.com/aaoiki/margopher"
+  import "github.com/yahmds/margopher"
   ```
 
 2. Create new margopher object
@@ -63,7 +63,7 @@ go get github.com/aaoiki/margopher
   - ReadURL(url string)
 
   ```go
-  url := "https://github.com/aaoiki/margopher"
+  url := "https://github.com/yahmds/margopher"
   fmt.Println(m.ReadURL(url))
   ```
 
@@ -83,4 +83,4 @@ than welcome. If you have any, please open an issue or send a pull request.
 
 ## License
 
-See [LICENSE](https://github.com/aaoiki/margopher/blob/master/LICENSE).
+See [LICENSE](https://github.com/yahmds/margopher/blob/master/LICENSE).
