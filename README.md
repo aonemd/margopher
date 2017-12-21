@@ -1,6 +1,8 @@
 margopher
 ---
 
+[![Build Status](https://travis-ci.org/yahmds/margopher.svg?branch=master)](https://travis-ci.org/yahmds/margopher)
+
 [Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator
 
 ## How it Works
