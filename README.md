@@ -1,7 +1,7 @@
 margopher
 ---
 
-[![Build Status](https://travis-ci.org/yahmds/margopher.svg?branch=master)](https://travis-ci.org/yahmds/margopher)
+[![Build Status](https://travis-ci.org/aonemd/margopher.svg?branch=master)](https://travis-ci.org/aonemd/margopher)
 
 [Markov chain](http://www.wikiwand.com/en/Markov_chain) random text generator
 
@@ -29,7 +29,7 @@ word that ends in any of `.,:;?!`)
 ## Installation
 
 ```sh
-go get github.com/yahmds/margopher
+go get github.com/aonemd/margopher
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ go get github.com/yahmds/margopher
 1. Import the package
 
   ```go
-  import "github.com/yahmds/margopher"
+  import "github.com/aonemd/margopher"
   ```
 
 2. Create new margopher object
@@ -65,7 +65,7 @@ go get github.com/yahmds/margopher
   - ReadURL(url string)
 
   ```go
-  url := "https://github.com/yahmds/margopher"
+  url := "https://github.com/aonemd/margopher"
   fmt.Println(m.ReadURL(url))
   ```
 
@@ -85,4 +85,4 @@ than welcome. If you have any, please open an issue or send a pull request.
 
 ## License
 
-See [LICENSE](https://github.com/yahmds/margopher/blob/master/LICENSE).
+See [LICENSE](https://github.com/aonemd/margopher/blob/master/LICENSE).
