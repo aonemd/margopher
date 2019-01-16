@@ -121,7 +121,7 @@ func (m *margopher) getRandomPrefix(prefix [2]string) [2]string {
 
 // Return a random element from a given string slice
 func getRandomWord(slice []string) string {
-	if !(cap(slice) == 0) {
+	if cap(slice) != 0 {
 		return slice[rand.Intn(len(slice))]
 	} else {
 		return ""
